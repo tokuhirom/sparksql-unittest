@@ -1,2 +1,3 @@
 /build/
 /metastore_db/
+/derby.log

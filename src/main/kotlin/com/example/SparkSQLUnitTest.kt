@@ -33,17 +33,20 @@ class TestClass {
 
         println("++++ create table")
         spark.sql("create database if not exists foo")
-//        spark.sql("""drop table if exists `foo`.`people`""")
+        df.write().mode(SaveMode.Overwrite).saveAsTable("foo.people")
+        spark.sql("show tables").show()
+        spark.sql("show create table foo.people").show(false)
+
+        // If the type of data is the important thing, you need to write your schema by yourself.
+        //        spark.sql("""drop table if exists `foo`.`people`""")
 //        spark.sql("""
 //        CREATE TABLE `foo`.`people` (
 //            `name` STRING,
 //            `age` long,
 //            `extra_fields` STRING)
 //        USING parquet""".trimIndent())
-        df.write().mode(SaveMode.Overwrite).saveAsTable("foo.people")
 //        df.write().insertInto("foo.people")
-        spark.sql("show tables").show()
-        spark.sql("show create table foo.people").show(false)
+
 
         println("++++ select")
         val sqlDF: Dataset<Row> = spark.sql("SELECT * FROM foo.people")
