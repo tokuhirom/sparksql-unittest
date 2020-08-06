@@ -3,6 +3,7 @@ package com.example
 import org.apache.spark.sql.Dataset
 import org.apache.spark.sql.Row
 import org.apache.spark.sql.SparkSession
+import java.lang.management.ManagementFactory
 
 // test without
 class SimpleTest {
@@ -41,4 +42,5 @@ class SimpleTest {
 
 fun main() {
     SimpleTest().run()
+    println("\n\n\n++++ Elapsed: ${ManagementFactory.getRuntimeMXBean().uptime}")
 }
