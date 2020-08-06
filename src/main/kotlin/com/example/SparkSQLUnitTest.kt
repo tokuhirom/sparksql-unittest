@@ -5,11 +5,6 @@ import org.apache.spark.sql.Row
 import org.apache.spark.sql.SaveMode
 import org.apache.spark.sql.SparkSession
 
-val query = """
-SELECT *
-FROM people
-"""
-
 class TestClass {
     fun run() {
         val warehouseLocation = createTempDir()
