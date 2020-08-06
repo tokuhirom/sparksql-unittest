@@ -1,0 +1,4 @@
+{"name": "Nick",	"age":35,	"extra_fields": "{\"interests\":[\"car\", \"golf\"]}"}
+{"name": "John",	"age":23}
+{"name":"Cathy",	"age":44,	"extra_fields":"{\"interests\":[\"cooking\"]}"}
+
